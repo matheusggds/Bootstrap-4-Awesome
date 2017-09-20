@@ -1,40 +1,45 @@
-# Bootstrap 4 Init
-Stack inicial para um projeto utilizando Bootstrap 4 + SASS + Fonts Awesome
+# Bootstrap 4 Awesome
+> I almost everytime use BS4 + FontsAwesome + Sass + Gulp on my projects, cause for me they ~~born~~ are perfect for each other. So i am sharing it for who wants to, enjoy!
 
-## Editando
-Adicione seu proprio css em /sass/theme/_child_theme.scss
+## Init
+> https://github.com/matheusggds/Bootstrap-4-Awesome.git
 
-Para sobreescrever as variaveis utilize este arquivo
-/sass/theme/_child_theme_variables.scss
+## Editing
+Add your own CSS styles to `/sass/custom/custom.scss`
 
-Por exemplo:
-A variavel "$brand-primary" é usada pelo Bootstrap.
-Adicione sua propria variavel:
-$brand-primary: #ff6600;
-em sass/theme/_child_theme_variables.scss para sobreescrever.
+To overwrite Bootstrap base variables just add your own value to: `/sass/custom/custom_variables.scss`
 
-## NPM, Gulp, SASS and Browser Sync
+For example:
+
+```
+$brand-primary: #fefefe
+```
+
+ the **$brand-primary** variable is used by Bootstrap. Add your own color in `/sass/custom/custom_variables.scss` to overwrite it.
+
+That will change automatically all elements who use this variable. It will be outputted into: `assets/css/style.min.css` and `assets/css/style.css`
+
+So you have one clean CSS file at the end and just one request.
 
 ### Installing Dependencies
-- Tenha certeza de ter Node.js, Gulp, and Browser-Sync [1] instalados globalmente.
-- Entao abra seu terminal na pasta raiz do seu projeto
-- Run: `npm install` then: `gulp copy-assets`
+- Make sure you have installed [Node.js](https://nodejs.org/), [Gulp](https://gulpjs.com/), and Browser-Sync [1] on your computer globally
+- Then open your terminal and browse to the location of your project
+- Run: `$ npm install` then: `$ gulp copy-assets`
 
 ### Running
-Para iniciar e compilar seu SASS, rode em seu terminal:
+To work and compile your Sass files on the fly start:
 
 - `$ gulp watch`
 
-Ou com Browser-sync:
+Or, to run with Browser-Sync:
 
-- Primeiro edite as opcoes do browser-sync para referenciar o ambiente do seu projeto no arquivo `/gulpfile.js`:
+- First change the browser-sync options to reflect your environment in the file `/gulpfile.js` in the beginning of the file:
 ```javascript
 var browserSyncOptions = {
-    proxy: "localhost/theme_test/", // <----- CHANGE HERE
+    proxy: "localhost/project_name/", // <----- CHANGE HERE
     notify: false
 };
 ```
-
-- Entao rode: `$ gulp watch-bs`
+- then run: `$ gulp watch-bs`
 
 [1] Visit [http://browsersync.io](http://browsersync.io) for more information on Browser Sync
